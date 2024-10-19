@@ -3,7 +3,7 @@ import {Provider} from 'react-redux';
 import App from './App.tsx';
 import './index.css';
 import store from '../src/app/store.ts';
-import './styles/App.module.scss';
+import '../src/page/home/App.module.scss';
 
 const root = createRoot(document.getElementById('root') as HTMLElement);
 

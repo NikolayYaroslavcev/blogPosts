@@ -1,8 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-// import './styles/reset.css';
-import styles from './styles/App.module.scss';
-import {Home} from "../src/page/Home.tsx";
-import {PostDetail} from "../src/page/PostDetail.tsx";
+import styles from '../src/page/home/App.module.scss';
+import {Home} from "../src/page/home/Home.tsx";
+import {PostDetail} from "../src/page/postDetail/PostDetail.tsx";
 
 
 

@@ -1,8 +1,7 @@
-
 import * as Dialog from '@radix-ui/react-dialog';
-
 import AddPostModal from '../../components/modal/AddPostModal.tsx';
-import styles from '../../styles/App.module.scss';
+import styles from '../../page/home/App.module.scss';
+
 
 
 

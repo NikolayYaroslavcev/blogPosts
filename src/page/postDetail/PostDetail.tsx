@@ -1,12 +1,13 @@
 import { useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 
-import styles from '../styles/PostDetail.module.scss';
-import { useAppDispatch } from "../common/hook/UseDispatch.ts";
-import { getPostById } from "../entities/posts/module/getPostById/getPostById.tsx";
-import { useAppSelector } from "../common/hook/UseSelector.ts";
-import { Preloader } from "../components/Preloader.tsx";
 import 'animate.css';
+import {useAppDispatch} from "../../common/hook/UseDispatch.ts";
+import {useAppSelector} from "../../common/hook/UseSelector.ts";
+import {getPostById} from "../../entities/posts/module/getPostById/getPostById.tsx";
+import {Preloader} from "../../components/preloader/Preloader.tsx";
+import styles from "../../page/postDetail/PostDetail.module.scss";
+
 
 export const PostDetail = () => {
     const { id } = useParams<{ id: string }>();

@@ -1,7 +1,7 @@
 import {useState} from 'react';
 import {useDispatch} from 'react-redux';
 import * as Dialog from '@radix-ui/react-dialog';
-import styles from '../../styles/AddPostModal.module.scss';
+import styles from './AddPostModal.module.scss';
 import {addPost} from "../../entities/posts/module/addPost/addPost.tsx";
 
 interface AddPostModalProps {

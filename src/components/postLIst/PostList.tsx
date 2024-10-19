@@ -1,8 +1,10 @@
-import { Link } from 'react-router-dom';
-import styles from '../styles/PostList.module.scss';
-import { Post } from "../entities/posts/module/types/types.ts";
-import { Preloader } from "../components/Preloader.tsx";
+import {Link} from 'react-router-dom';
+import styles from './PostList.module.scss';
+
 import 'animate.css';
+import {Post} from "../../entities/posts/module/types/types.ts";
+import {Preloader} from "../../components/preloader/Preloader.tsx";
+
 
 interface PostListProps {
     posts: Post[];
@@ -14,17 +16,18 @@ interface PostListProps {
     totalPosts: number;
 }
 
-export const PostList = ({
-                             posts,
-                             loading,
-                             error,
-                             onNextPage,
-                             onPrevPage,
-                             page,
-                             totalPosts,
-                         }: PostListProps) => {
+export const PostList = (
+    {
+        posts,
+        loading,
+        error,
+        onNextPage,
+        onPrevPage,
+        page,
+        totalPosts,
+    }: PostListProps) => {
 
-    if (loading) return <Preloader />;
+    if (loading) return <Preloader/>;
     if (error) return <div>Error: {error}</div>;
 
     return (
@@ -35,9 +38,9 @@ export const PostList = ({
                     <div
                         key={post.id}
                         className={`animate__animated animate__fadeInUp ${styles.postItem}`}
-                        style={{ animationDelay: `${index * 0.1}s` }} // Slight delay for each item
+                        style={{animationDelay: `${index * 0.1}s`}}
                     >
-                        <img src={`https://picsum.photos/1500/1500.jpg`} alt="Random" />
+                        <img src={`https://picsum.photos/1500/1500.jpg`} alt="Random"/>
                         <div className={styles.postContent}>
                             <h2>{post.title}</h2>
                             <p>Author: {post.userId}</p>

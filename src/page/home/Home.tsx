@@ -1,10 +1,14 @@
 import {useEffect, useState} from 'react';
+import {useAppDispatch} from "../../common/hook/UseDispatch.ts";
+import {useAppSelector} from "../../common/hook/UseSelector.ts";
+import {getPosts} from "../../entities/posts/module/getPosts/getPosts.tsx";
+import {ModalWrap} from "../../components/modal/ModalWrap.tsx";
+import {PostList} from "../../components/postLIst/PostList.tsx";
 
-import {PostList} from "../components/Post.tsx";
-import {useAppDispatch} from "../common/hook/UseDispatch.ts"; // Import your custom hooks
-import {useAppSelector} from "../common/hook/UseSelector.ts"; // Import your custom hooks
-import {getPosts} from "../entities/posts/module/getPosts/getPosts.tsx";
-import {ModalWrap} from "../components/modal/ModalWrap.tsx"; // Ensure you import your getPosts action
+
+
+
+
 
 export const Home = () => {
     const dispatch = useAppDispatch();

@@ -17,8 +17,9 @@
 
   h1 {
     color: #343a40;
-    font-size: 2.5rem;
     margin-bottom: 10px;
+    font-size: clamp(16px, 0.818rem + 0.91vw, 24px);
+    text-transform: capitalize;
   }
 
   p {
@@ -37,12 +38,9 @@
   @media (max-width: 600px) {
     padding: 15px;
 
-    h1 {
-      font-size: 2rem;
-    }
-
     p {
-      font-size: 1rem;
+      text-transform: capitalize;
+      font-size: 16px;
     }
   }
 }
