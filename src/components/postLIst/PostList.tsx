@@ -1,10 +1,9 @@
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import styles from './PostList.module.scss';
 
 import 'animate.css';
-import {Post} from "../../entities/posts/module/types/types.ts";
-import {Preloader} from "../../components/preloader/Preloader.tsx";
-
+import { Post } from "../../entities/posts/module/types/types.ts";
+import { Preloader } from "../../components/preloader/Preloader.tsx";
 
 interface PostListProps {
     posts: Post[];
@@ -27,7 +26,7 @@ export const PostList = (
         totalPosts,
     }: PostListProps) => {
 
-    if (loading) return <Preloader/>;
+    if (loading) return <Preloader />;
     if (error) return <div>Error: {error}</div>;
 
     return (
@@ -37,13 +36,17 @@ export const PostList = (
                 {posts.map((post, index) => (
                     <div
                         key={post.id}
-                        className={`animate__animated animate__fadeInUp ${styles.postItem}`}
-                        style={{animationDelay: `${index * 0.1}s`}}
+                        className={`animate__animated animate__zoomIn ${styles.postItem}`}
+                        style={{ animationDelay: `${index * 0.1}s` }}
                     >
-                        <img src={`https://picsum.photos/1500/1500.jpg`} alt="Random"/>
+                        <img
+                            src={post.imageUrl}
+                            alt="Post"
+                            className={styles.postImage}
+                        />
                         <div className={styles.postContent}>
                             <h2>{post.title}</h2>
-                            <p>Author: {post.userId}</p>
+                            <p>Author: {post.authorName}</p>
                         </div>
                         <Link to={`/posts/${post.id}`} className={styles.readMoreButton}>Read more</Link>
                     </div>

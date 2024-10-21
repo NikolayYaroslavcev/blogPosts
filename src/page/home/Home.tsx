@@ -9,10 +9,9 @@ import {PostList} from "../../components/postLIst/PostList.tsx";
 
 
 
-
 export const Home = () => {
     const dispatch = useAppDispatch();
-    const {totalPosts, loading, error, posts} = useAppSelector(state => state.posts);
+    const { totalPosts, loading, error, posts } = useAppSelector(state => state.posts);
 
     const [page, setPage] = useState(1);
 
@@ -30,7 +29,7 @@ export const Home = () => {
 
     return (
         <div>
-            <ModalWrap/>
+            <ModalWrap />
             <PostList
                 posts={posts}
                 loading={loading}

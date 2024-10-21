@@ -1,16 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
-import {addPost} from "../../entities/posts/module/addPost/addPost.tsx";
+import { addPost } from "../../entities/posts/module/addPost/addPost.tsx";
+import {Post} from "../../entities/posts/module/types/types.ts";
 
-
-
-interface Post {
-    id: number;
-    title: string;
-    body: string;
-    userId: number | string;
-}
-
-// Define initial state
 interface PostsState {
     posts: Post[];
     loading: boolean;
@@ -23,26 +14,23 @@ const initialState: PostsState = {
     error: null,
 };
 
-// Create the slice
 const addPostSlice = createSlice({
     name: 'addPost',
     initialState,
-    reducers: {
-        // Define any additional reducers if needed
-    },
+    reducers: {},
     extraReducers: (builder) => {
         builder
             .addCase(addPost.pending, (state) => {
-                state.loading = true; // Set loading to true when request is pending
-                state.error = null; // Reset any previous error
+                state.loading = true;
+                state.error = null;
             })
             .addCase(addPost.fulfilled, (state, action) => {
-                state.loading = false; // Set loading to false on success
-                state.posts.push(action.payload); // Add the new post to the posts array
+                state.loading = false;
+                state.posts.push(action.payload); // Ensure payload is of type Post
             })
             .addCase(addPost.rejected, (state, action) => {
-                state.loading = false; // Set loading to false on failure
-                state.error = action.error.message || 'Failed to add post'; // Capture any error message
+                state.loading = false;
+                state.error = action.error.message || 'Failed to add post';
             });
     },
 });

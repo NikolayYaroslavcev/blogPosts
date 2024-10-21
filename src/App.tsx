@@ -11,13 +11,15 @@ const App = () => {
     return (
         <Router>
             <div className={styles.app}>
-                <Routes>
-                    <Route path="/" element={<Home/>} />
-                    <Route path="/posts/:id" element={<PostDetail/>} />
-                </Routes>
+                    <Routes>
+                        <Route path="/" element={<Home />} />
+                        <Route path="/posts/:id" element={<PostDetail />} />
+                    </Routes>
+
             </div>
         </Router>
     );
 };
+
 
 export default App;

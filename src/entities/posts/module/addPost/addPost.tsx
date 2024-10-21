@@ -1,11 +1,24 @@
-import {createAsyncThunk} from '@reduxjs/toolkit';
+import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
-export const addPost = createAsyncThunk(
+interface AddPostArgs {
+    title: string;
+    body: string;
+}
+
+interface Post {
+    id: number;
+    title: string;
+    body: string;
+    userId: number | string;
+}
+
+export const addPost = createAsyncThunk<Post, AddPostArgs>(
     'posts/addPost',
-    async ({title, body}: { title: string; body: string }) => {
-        const response = await axios.post('https://jsonplaceholder.typicode.com/posts', {
+    async ({ title, body }) => {
+        const response = await axios.post(`${API_BASE_URL}/posts`, {
             title,
             body,
             userId: '1',

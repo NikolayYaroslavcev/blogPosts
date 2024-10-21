@@ -3,6 +3,8 @@ export interface Post {
     title: string;
     body: string;
     userId: number;
+    authorName?: string;
+    imageUrl?:string;
 }
 
 
@@ -21,6 +23,7 @@ export interface Post {
     title: string;
     body: string;
     userId: number;
+    imageUrl?: string;
 }
 
 export interface FetchPostsResponse {
