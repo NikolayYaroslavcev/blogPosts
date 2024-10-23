@@ -26,7 +26,7 @@ const addPostSlice = createSlice({
             })
             .addCase(addPost.fulfilled, (state, action) => {
                 state.loading = false;
-                state.posts.push(action.payload); // Ensure payload is of type Post
+                state.posts.push(action.payload);
             })
             .addCase(addPost.rejected, (state, action) => {
                 state.loading = false;

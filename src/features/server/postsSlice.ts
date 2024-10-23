@@ -1,14 +1,6 @@
-import { createSlice } from '@reduxjs/toolkit';
+import {createSlice, PayloadAction} from '@reduxjs/toolkit';
 import {getPosts} from "../../entities/posts/module/getPosts/getPosts.tsx";
-
-
-
-interface Post {
-    id: number;
-    title: string;
-    body: string;
-    userId: number;
-}
+import {FetchPostsResponse, Post} from "../../entities/posts/module/types/types.ts";
 
 interface PostsState {
     posts: Post[];
@@ -34,14 +26,14 @@ const postsSlice = createSlice({
                 state.loading = true;
                 state.error = null;
             })
-            .addCase(getPosts.fulfilled, (state, action) => {
+            .addCase(getPosts.fulfilled, (state, action: PayloadAction<FetchPostsResponse>) => {
                 state.posts = action.payload.posts;
                 state.totalPosts = action.payload.totalPosts;
                 state.loading = false;
             })
-            .addCase(getPosts.rejected, (state, action) => {
+            .addCase(getPosts.rejected, (state, action: PayloadAction<string | null>) => {
                 state.loading = false;
-                state.error = action.payload as string;
+                state.error = action.payload ?? 'Failed to fetch posts';
             });
     },
 });

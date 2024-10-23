@@ -5,7 +5,6 @@ import addPostReducer from '../features/server/addPostSlice.ts';
 
 
 
-
 const rootReducer = combineReducers({
     posts: postsReducer,
     postDetail: postDetailReducer,
@@ -14,7 +13,6 @@ const rootReducer = combineReducers({
 
 const store = configureStore({
     reducer: rootReducer,
-
 });
 
 export type RootState = ReturnType<typeof rootReducer>

@@ -4,7 +4,7 @@ export interface Post {
     body: string;
     userId: number;
     authorName?: string;
-    imageUrl?:string;
+    imageUrl?: string;
 }
 
 
@@ -16,6 +16,7 @@ export interface User {
 export interface FetchPostResponse {
     post: Post;
     author: User;
+    imageUrl?: string;
 }
 
 export interface Post {
@@ -24,9 +25,10 @@ export interface Post {
     body: string;
     userId: number;
     imageUrl?: string;
+    authorName?: string;
 }
 
 export interface FetchPostsResponse {
     posts: Post[];
-    totalPosts: number;
+    totalPosts?: number;
 }

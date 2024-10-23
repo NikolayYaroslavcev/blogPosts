@@ -13,6 +13,7 @@ export const Home = () => {
     const dispatch = useAppDispatch();
     const { totalPosts, loading, error, posts } = useAppSelector(state => state.posts);
 
+
     const [page, setPage] = useState(1);
 
     useEffect(() => {

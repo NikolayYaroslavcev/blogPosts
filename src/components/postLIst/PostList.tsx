@@ -33,11 +33,11 @@ export const PostList = (
         <div>
             <h1>Blog Posts</h1>
             <div className={styles.postList}>
-                {posts.map((post, index) => (
+                {posts.map((post) => (
                     <div
                         key={post.id}
                         className={`animate__animated animate__zoomIn ${styles.postItem}`}
-                        style={{ animationDelay: `${index * 0.1}s` }}
+                        style={{ animationDelay: `${post.id * 0.1}s` }}
                     >
                         <img
                             src={post.imageUrl}

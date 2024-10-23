@@ -1,6 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { getPostById } from '../../entities/posts/module/getPostById/getPostById.tsx';  // Импортируем созданный thunk
-
+import { getPostById } from '../../entities/posts/module/getPostById/getPostById.tsx';
 interface Post {
     id: number;
     title: string;

@@ -2,7 +2,6 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 import { FetchPostResponse } from "../../../../entities/posts/module/types/types.ts";
 
-// Используем базовый URL из .env
 const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
 export const getPostById = createAsyncThunk<FetchPostResponse, string>(
